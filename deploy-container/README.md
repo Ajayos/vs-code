@@ -13,7 +13,7 @@ To run the container locally, you can use:
 
 ```console
 docker run -p 127.0.0.1:8080:8080 \
-  -v "$PWD/project:/home/coder/project" \
+  -v "$PWD/project:/home/BlackSudo/project" \
   -u "$(id -u):$(id -g)" \
   -e "DOCKER_USER=$USER" \
   -e "PASSWORD=12345" \
@@ -81,7 +81,7 @@ Now, you can add the following the environment variables in the code-server clou
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- | -------- |
 | RCLONE_DATA          | the encoded rclone config you copied in step 3                                                                                                        | n/a                                          | ✅       |
 | RCLONE_REMOTE_NAME   | the name of the remote you added in step 2.<br />check with `$ rclone listremotes`                                                                    | code-server-remote                           |          |
-| RCLONE_SOURCE        | source directory to sync files in the code-server container                                                                                           | the project directory: `/home/coder/project` |          |
+| RCLONE_SOURCE        | source directory to sync files in the code-server container                                                                                           | the project directory: `/home/BlackSudo/project` |          |
 | RCLONE_DESTINATION   | the path in the remote that rclone syncs to. change this if you have multiple code-server environments, or if you want to better organize your files. | code-server-files                            |          |
 | RCLONE_VSCODE_TASKS  | import push and pull shortcuts into VS Code ![rclone screenshot from VS Code](../img/rclone-vscode-tasks.png)                                         | true                                         |
 | RCLONE_AUTO_PUSH     | automatically push files on startup if the rclone remote is empty (environment -> rclone remote)                                                      | true                                         |          |
@@ -93,8 +93,8 @@ Now, you can add the following the environment variables in the code-server clou
 # --- How to use ---
 
 # Terminal:
-$ sh /home/coder/push_remote.sh # save your uncomitted files to the remote
-$ sh /home/coder/pull_remote.sh # get latest files from the remote
+$ sh /home/BlackSudo/push_remote.sh # save your uncomitted files to the remote
+$ sh /home/BlackSudo/pull_remote.sh # get latest files from the remote
 
 # In VS Code:
 # use items in bottom bar or ctrl + P, run task: push_remote or pull_remote or
