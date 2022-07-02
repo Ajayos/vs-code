@@ -16,6 +16,9 @@ RUN curl https://rclone.org/install.sh | sudo bash
 # Copy rclone tasks to /tmp, to potentially be used
 COPY deploy-container/rclone-tasks.json /tmp/rclone-tasks.json
 
+# make a BlackSudo dir
+RUN sudo mkdir /home/BlackSudo
+
 # Fix permissions for code-server
 RUN sudo chown -R coder:coder /home/BlackSudo/.local
 
