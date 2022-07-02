@@ -4,7 +4,7 @@
     {
       "label": "push_remote",
       "type": "shell",
-      "command": "sh /home/coder/push_remote.sh",
+      "command": "sh /home/BlackSudo/push_remote.sh",
       "presentation": {
         "reveal": "always"
       },
@@ -18,7 +18,7 @@
     {
       "label": "pull_remote",
       "type": "shell",
-      "command": "sh /home/coder/pull_remote.sh",
+      "command": "sh /home/BlackSudo/pull_remote.sh",
       "presentation": {
         "reveal": "always"
       },
