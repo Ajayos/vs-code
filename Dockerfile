@@ -20,7 +20,7 @@ COPY deploy-container/rclone-tasks.json /tmp/rclone-tasks.json
 RUN sudo mkdir /home/BlackSudo
 
 # Fix permissions for code-server
-RUN sudo chown -R coder:coder /home/BlackSudo/.local
+RUN sudo chown -R coder:coder /home/coder/.local
 
 # You can add custom software and dependencies for your environment below
 # -----------
