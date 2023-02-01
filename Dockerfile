@@ -33,7 +33,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 # RUN sudo apt-get install -y ubuntu-make
 
 # Copy files: 
-# COPY deploy-container/myTool /home/BlackSudo/myTool
+# COPY deploy-container/myTool /home/Ajay/myTool
 
 # -----------
 

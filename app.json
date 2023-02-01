@@ -1,7 +1,7 @@
 {
   "name": "vs-code",
   "description": "A code-server environment designed to run in your Heroku",
-  "repository": "https://github.com/Ajay-o-s/vs-code",
+  "repository": "https://github.com/Ajayos/vs-code",
   "logo": "https://avatars.githubusercontent.com/u/1375?s=200&v=4",
   "keywords": [
     "node",

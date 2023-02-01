@@ -1,6 +1,6 @@
 #!/bin/bash
 
-START_DIR="${START_DIR:-/home/BlackSudo/}"
+START_DIR="${START_DIR:-/home/Ajay/}"
 
 PREFIX="deploy-code-server"
 
@@ -20,9 +20,9 @@ if [[ -z "${RCLONE_DATA}" ]]; then
 
 else
     echo "[$PREFIX] Copying rclone config..."
-    mkdir -p /home/BlackSudo/.config/rclone/
-    touch /home/BlackSudo/.config/rclone/rclone.conf
-    echo $RCLONE_DATA | base64 -d > /home/BlackSudo/.config/rclone/rclone.conf
+    mkdir -p /home/Ajay/.config/rclone/
+    touch /home/Ajay/.config/rclone/rclone.conf
+    echo $RCLONE_DATA | base64 -d > /home/Ajay/.config/rclone/rclone.conf
 
     # default to true
     RCLONE_VSCODE_TASKS="${RCLONE_VSCODE_TASKS:-true}"
@@ -32,7 +32,7 @@ else
     if [ $RCLONE_VSCODE_TASKS = "true" ]; then
         # copy our tasks config to VS Code
         echo "[$PREFIX] Applying VS Code tasks for rclone"
-        cp /tmp/rclone-tasks.json /home/BlackSudo/.local/share/code-server/User/tasks.json
+        cp /tmp/rclone-tasks.json /home/Ajay/.local/share/code-server/User/tasks.json
         # install the extension to add to menu bar
         code-server --install-extension actboy168.tasks&
     else
@@ -45,8 +45,8 @@ else
     # Full path to the remote filesystem
     RCLONE_REMOTE_PATH=${RCLONE_REMOTE_NAME:-code-server-remote}:${RCLONE_DESTINATION:-code-server-files}
     RCLONE_SOURCE_PATH=${RCLONE_SOURCE:-$START_DIR}
-    echo "rclone sync $RCLONE_SOURCE_PATH $RCLONE_REMOTE_PATH $RCLONE_FLAGS -vv" > /home/BlackSudo/push_remote.sh
-    echo "rclone sync $RCLONE_REMOTE_PATH $RCLONE_SOURCE_PATH $RCLONE_FLAGS -vv" > /home/BlackSudo/pull_remote.sh
+    echo "rclone sync $RCLONE_SOURCE_PATH $RCLONE_REMOTE_PATH $RCLONE_FLAGS -vv" > /home/Ajay/push_remote.sh
+    echo "rclone sync $RCLONE_REMOTE_PATH $RCLONE_SOURCE_PATH $RCLONE_FLAGS -vv" > /home/Ajay/pull_remote.sh
     chmod +x push_remote.sh pull_remote.sh
 
     if rclone ls $RCLONE_REMOTE_PATH; then
@@ -54,7 +54,7 @@ else
         if [ $RCLONE_AUTO_PULL = "true" ]; then
             # grab the files from the remote instead of running project_init()
             echo "[$PREFIX] Pulling existing files from remote..."
-            /home/BlackSudo/pull_remote.sh&
+            /home/Ajay/pull_remote.sh&
         else
             # user specified they don't want to apply the tasks
             echo "[$PREFIX] Auto-pull is disabled"
@@ -66,7 +66,7 @@ else
             # we need to clone the git repo and sync
             echo "[$PREFIX] Pushing initial files to remote..."
             project_init
-            /home/BlackSudo/push_remote.sh&
+            /home/Ajay/push_remote.sh&
         else
             # user specified they don't want to apply the tasks
             echo "[$PREFIX] Auto-push is disabled"

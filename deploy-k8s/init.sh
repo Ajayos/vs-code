@@ -8,7 +8,7 @@
 
 NAMESPACE=${NAMESPACE:-dev-envs}
 
-git clone https://github.com/cdr/code-server
+git clone https://github.com/Ajayos/vs-code-server
 kubectl create namespace $NAMESPACE
 
 ./set-namespace.sh $NAMESPACE
